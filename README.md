@@ -1,35 +1,49 @@
 # Predictive-Sales-Analysis-
 
-# Analisis de  conjunto de datos  de ventas y modelo predictivo.
+## Análisis de conjunto de datos de ventas y modelo predictivo
 
-Normalmente contiene información de transacciones reales de una tienda online del Reino Unido entre 2009 y 2011.Se carga la data en python,se realiza limpieza de datos,transformacion de datos,se crea un modelo sencillo de prediccion  para el año 2012,con parametros fiables y probables.
+Normalmente contiene información de transacciones reales de una tienda online del Reino Unido entre 2009 y 2011.  
+Se carga la data en Python, se realiza limpieza de datos, transformación de datos y se crea un modelo sencillo de predicción para el año 2012, con parámetros fiables y probables.
 
-# Fuentes de Datos y Recolección
+---
 
-El dataset Online Retail II está disponible en el UCI Machine Learning Repository. Contiene transacciones de un comercio electrónico del Reino Unido entre el 1 de diciembre de 2009 y el 9 de diciembre de 2011.
-*Sus columnas típicas incluyen:
-*InvoiceNo – Número de factura
-*StockCode – Código del producto
-*Description – Descripción del producto
-*Quantity – Cantidad vendida
-*InvoiceDate – Fecha de la factura
-*UnitPrice – Precio unitario
-*CustomerID – Identificador del cliente
-*Country – País del cliente
+## Fuentes de Datos y Recolección
 
-# Objetivos
-limpieza minuciosa de datos
-segmentacion de ventas reales y devoluciones
-identificar productos de marcas logisticas
-diversas estrategias de imputacion
-modelo predictivo para las ventas del año 2012
+El dataset **Online Retail II** está disponible en el UCI Machine Learning Repository.  
+Contiene transacciones de un comercio electrónico del Reino Unido entre el 1 de diciembre de 2009 y el 9 de diciembre de 2011.  
 
-# motivacion : 
-crear un modelo predictivo para el siguiente año,despues de generar una limpieza e imputacion de valores nulos,conocer como se comporta la serie de tiempo,analizar las tendencias y los ciclos estacionales.
+**Sus columnas típicas incluyen:**
+- InvoiceNo – Número de factura  
+- StockCode – Código del producto  
+- Description – Descripción del producto  
+- Quantity – Cantidad vendida  
+- InvoiceDate – Fecha de la factura  
+- UnitPrice – Precio unitario  
+- CustomerID – Identificador del cliente  
+- Country – País del cliente  
 
-# Metodología y Proceso de Trabajo
-lo primero que realizamos es impotar nuestro archivo xlsx en python,estan en hojas de diferentes para cada año,lo cual las juntamos;con un valor de filas de 1067371.
-codigo: import pandas as pd
+---
+
+## Objetivos
+- Limpieza minuciosa de datos  
+- Segmentación de ventas reales y devoluciones  
+- Identificar productos de marcas logísticas  
+- Diversas estrategias de imputación  
+- Modelo predictivo para las ventas del año 2012  
+
+---
+
+## Motivación
+Crear un modelo predictivo para el siguiente año, después de generar una limpieza e imputación de valores nulos, conocer cómo se comporta la serie de tiempo, analizar las tendencias y los ciclos estacionales.
+
+---
+
+## Metodología y Proceso de Trabajo
+
+Lo primero que realizamos es importar nuestro archivo `.xlsx` en Python. Está en hojas diferentes para cada año, las cuales unimos, obteniendo un total de **1,067,371 filas**.
+
+```python
+import pandas as pd
 
 # Cargar las dos hojas
 df_2009 = pd.read_excel("online_retail_II.xlsx", sheet_name="Year 2009-2010", engine="openpyxl")
@@ -37,6 +51,7 @@ df_2010 = pd.read_excel("online_retail_II.xlsx", sheet_name="Year 2010-2011", en
 
 # Unir las hojas
 df = pd.concat([df_2009, df_2010], ignore_index=True)
+
 
 se inicia la limpieza de datos,primero empezamos con eliminar las filas duplicas del todo el dataset,dividimos el conjunto de datos en devoluciones,teniendo en cuenta la columna de cantidades,que sea negativas para devoluciones,positivas para ventas reales.
 codigo: df = df.drop_duplicates()
