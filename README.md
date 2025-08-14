@@ -317,20 +317,64 @@ En varias filas, los dos campos (Description y Customer ID) están nulos al mism
 La mayor densidad de nulos está en la columna Customer ID, lo que indica que podría ser un campo incompleto o poco registrado en devoluciones.
 -la myoria de valores nulos estan asociados con el pais Reino Unido,tiene cierta correlacion por ser la tienda online de Reino Unido.
 
- ## Conclusion de los principales indicadores:
--
-
-
-
+ ## Conclusion generales de los principales indicadores:
+- las devoluciones totales reales,es decir,sin contar claramente registros logisticos,para los años de analisis,fueron 1.010.668 $,millones de dolares
+- los 5 productos con mayores devoluciones fueron de mayor a menor: Paper craft,Little Birdie,Medium Ceramic top storage,printing smudgest/thrown away y ebay sales,es un canal de ventas y given away,producto logistico
+-el grafico de lineas sobre devoluciones del producto,durante los 2 años se observa sin una tendencia marcada,presentado mayores devoluciones en epocas de diciembre y enero
+-el producto con mayor devolucion, Paper craft,Little Birdie,representa el 10,25% del total de todos los productos devueltos.
+-el pais que presenta mayores devoluciones fue Reino unido,seguido de Francia.
+-Para ventas reales,el producto con mayor cantidad de unidades vendidas en total,fue world war 2,gliders asstd designs con un total de 106,140 mil unidades vendidas.
+-el producto con mayores ventas monetarias fue regency cakestand 3 tier con un total de 350,590 $ mil dolares.
+- el pais con mayores ventas tanto en unidades de productos,como monetarias,fue Reino unido.El menor fue Arabia Saudia.
+- La serie de tiempo no suele observarse una tendencia marcada,pero tiene 2 ciclos estacionales con fuertes picos,que corresponden a fechas especiales y logicas en ventas como los meses de diciembre.
 
 ## Conclusion del modelo predictivo
+## 📊 Interpretación de métricas
+### **RMSE:** 25,644.10  
+> *Root Mean Square Error* — mide el error promedio penalizando más los errores grandes.  
+✅ En este caso, el error promedio es bajo comparado con el rango de tus valores  
+(p. ej., si tus ventas están en cientos de miles o millones, es muy aceptable).
 
+### **MAE:** 21,218.95  
+> *Mean Absolute Error* — error promedio absoluto sin penalizar tanto los extremos.  
+✅ De media, el modelo se equivoca en unas **21 mil unidades** respecto al valor real.
 
+### **MAPE:** 3.04%  
+> *Mean Absolute Percentage Error* — error en porcentaje.  
+✅ **3%** es excelente para series temporales, indica **muy alta precisión**.
 
+### **R²:** 0.9892  
+> Coeficiente de determinación.  
+✅ El **98.9%** de la variabilidad de los datos está explicada por el modelo.
+
+### **MedAE:** 22,922.56  
+> Mediana del Error Absoluto.  
+✅ Similar al MAE, pero evita que valores extremos influyan demasiado.
+
+### **MaxAE:** 70,936.30  
+> Máximo Error Absoluto.  
+⚠ El peor caso en el que el modelo se desvió respecto al valor real.
+
+### **Desviación estándar de errores:** 25,644.10  
+> Indica cuánto varían los errores alrededor del promedio.
+
+### **Theil's U:** 0.093  
+> Compara tu modelo con un pronóstico ingenuo (asumir que este mes es igual al anterior).  
+✅ Menor que 1 significa que el modelo es mejor que el ingenuo.  
+💪 **0.093** es excelente: el modelo es casi **10 veces más preciso** que e
+
+ ## Conclusion generales de los principales indicadores:
+- 5,14%,representa el total en valor monetario de devoluciones sobre las ventas
+- Paper craft,Little Birdie,representa el 10,25% del total de todos los productos devueltos,le sigue Medium Ceramic top storage.Se recomienda generar analisis de estos  productos mas devueltos,encontrar la razon de las devoluciones,sea por calidad o empaque.
+- el Reino Unido concentra las ventas, es normal que  concentrará también las devoluciones, y eso no siempre es señal de problema, sino del volumen y la facilidad de gestión de devoluciones en el mismo pais.
+-la tienda online procede de Reino Unido y concentra las mayores ventas,esto es normal por el alcance y posicionamiento local,confianza del cliente local,costos de tiempo de envios,regulacion y pagos.
+-el producto regency cakestand 3 tier,presenta los mayores ingresos para la tienda
 ## Propuesta como analista: 
-
-
-
+-5,14% corresponde a devoluciones del total de ventas,al ser una tienda online no representa un porcetanje tan alto,pero hay que revisar la tendencia en los años,si es alcista o se mantiene estable alrededor del promedio.Según la grafica para el total de años en la tabla,solo devoluciones,parece un grafico estable a lo largo del tiempo,con fechas estacionales como diciembre,con muchas mas devoluciones,pero esto es normal y esta relacionado a mayores ventas para esas fechas.
+-observando la tendencia del  gráfico y el porcentaje total devoluciones,sobre ventas,parece un costo estructural del canal online.
+el producto Paper craft,Little Birdie,seria interesante valorar su aporte monetario por devoluciones,asi como otros productos que puedan generar gran aporte a las ventas e intervenir las causas de sus devoluciones.
+-el producto regency cakestand 3 tier,genero mayores ingresos de ventas.si existe alto ingreso,existe mayor demanda.Este producto se puede explorar muchos mas,como otros nichos de mercado,no solo en Reino Unido que ya representa la mayoria de ventas.Por ejemplo en Francia,segundo pais que compra mas en la tienda,mas cerca a Reino Unido,menores costos de transporte.Se podria generar estrategias de ventas para conquistar su mercado,reducir costos de compra de estos productos con materiales diferentes,economicos Y decoraciones mas llamativas;con el fin de  generar mas ganancias.
+- EL gráfico de los años de ventas reales,parece en general estable,con sus altos picos de ventas en fechas especiales,el modelo predictivo Prophet es eficiente y seguro para el conjunto de datos según la evaluación de sus métricas y útil para uso predictivo para el año 2012.
 
 ## Tecnologías Utilizadas
 
