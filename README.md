@@ -315,9 +315,10 @@ print(f"Theil's U: {u_stat:.3f}  (U<1 → Prophet mejor que ingenuo)")
 - hay valores nulos en Description, pero menos frecuentes y dispersos.
 En varias filas, los dos campos (Description y Customer ID) están nulos al mismo tiempo.
 La mayor densidad de nulos está en la columna Customer ID, lo que indica que podría ser un campo incompleto o poco registrado en devoluciones.
--la myoria de valores nulos estan asociados con el pais Reino Unido,tiene cierta correlacion por ser una tienda online de Reino Unido.
+-la myoria de valores nulos estan asociados con el pais Reino Unido,tiene cierta correlacion por ser la tienda online de Reino Unido.
 
  ## Conclusion de los principales indicadores:
+-
 
 
 
